@@ -4,8 +4,8 @@ export default function CasinoLayout({ children }) {
     return (
         <section id="main-casino-layout" className="py-4">
             <div className="container-bet">
-                <div className="grid grid-cols-4 gap-4">
-                    <div className="col-span-3">
+                <div className="grid">
+                    <div>
                         {children}
                     </div>
                 </div>

@@ -5,12 +5,12 @@ export default function HomeLayout({ children }) {
     return (
         <section id="main-home-layout" className="py-4">
             <div className="container-bet">
-                <div className="grid grid-cols-4 gap-4">
-                    <div className="col-span-3">
+                <div className="grid lg:grid-cols-4 gap-4">
+                    <div className="grid gap-4 lg:col-span-3">
                         {children}
                     </div>
                     
-                    <div className="col-span-1">
+                    <div className="lg:col-span-1">
                         <SidebarBet />
                     </div>
                 </div>

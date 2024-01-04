@@ -34,7 +34,7 @@ export default function SlideHome() {
     return (
         <>
             <Swiper
-                className='home-swiper'
+                className='home-swiper w-full'
                 modules={[Autoplay]}
                 slidesPerView={1}
                 loop={true}
