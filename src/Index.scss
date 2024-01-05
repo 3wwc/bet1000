@@ -5,3 +5,23 @@
 .container-bet {
     @apply w-full max-w-[1920px] px-4 mx-auto;
 }
+
+.js-game-name {
+    width: 100%;
+    max-width: 300px;
+    @media (min-width: 768px) {
+        min-width: 300px;
+    }
+    @media (max-width: 520px) {
+        .games {
+            width: 8ch;
+            @media (min-width: 391px) {
+                width: 100%;
+                max-width: 10ch;
+            }
+            @media (min-width: 450px) {
+                max-width: 13ch;
+            }
+        }
+    }
+}

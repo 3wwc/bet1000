@@ -1,0 +1,47 @@
+import { Circle, PokerChip, SoccerBall, UserCircle, UserList } from '@phosphor-icons/react';
+import { useState, useEffect } from 'react';
+
+
+export default function BarBottom() {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', handleResize);
+        
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    if (windowWidth <= 767) {
+        return <>
+            <div className='w-full bg-zinc-800 fixed bottom-0 left-0 px-3'>
+                <div className="h-14 flex gap-2 justify-between items-center text-xs text-white">
+                    <div className='flex flex-col gap-1 items-center'>
+                        <Circle size={20} />
+                        <p>Ao vivo</p>
+                    </div>
+                    <div className='flex flex-col gap-1 items-center'>
+                        <SoccerBall size={20} />
+                        <p>Esportes</p>
+                    </div>
+                    <div className='flex flex-col gap-1 items-center'>
+                        <UserList size={20} />
+                        <p>Apostas</p>
+                    </div>
+                    <div className='flex flex-col gap-1 items-center'>
+                        <UserCircle size={20} />
+                        <p>Conta</p>
+                    </div>
+                    <div className='flex flex-col gap-1 items-center'>
+                        <PokerChip size={20} />
+                        <p>Cassino</p>
+                    </div>
+                </div>
+            </div>
+        </>;
+    } else {
+        return null;
+    }
+}

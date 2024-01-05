@@ -5,7 +5,7 @@ import { Basketball, HouseSimple, NumberCircleOne, SoccerBall, Star, TennisBall,
 export default function Header() {
     return (
         <>
-            <header className="bg-primary text-white py-3">
+            <header className="w-full bg-primary text-white py-3 z-50 sticky top-0 left-0">
                 <div className="container-bet flex justify-between items-center">
                     <div className='flex items-center gap-6'>
                         <Link to={'/'}>
@@ -26,7 +26,7 @@ export default function Header() {
                             to={'/registro'}
                             className="bg-secondary text-white py-2 px-4 rounded"
                         >
-                            Registrar-se Agora
+                            Registrar<span className='hidden sm:inline-block'>-se Agora</span>
                         </Link>
                         <Link
                             to={'/login'}
@@ -42,7 +42,7 @@ export default function Header() {
                 <div className="container-bet">
                     <nav>
                         <ul className='flex overflow-x-scroll'>
-                            <li className='py-2 px-4'>
+                            <li className='py-2 px-4 flex-shrink-0'>
                                 <Link to={'/'} className='flex gap-2 items-center flex-shrink-0'>
                                     <HouseSimple size={20} /> Página Inicial
                                 </Link>

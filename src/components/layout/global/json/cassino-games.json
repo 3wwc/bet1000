@@ -1,0 +1,44 @@
+{
+    "jogosDeCassino": [
+      {
+        "nome": "Roleta",
+        "tipo": "Jogo de mesa",
+        "variacoes": ["Americana", "Europeia", "Francesa"]
+      },
+      {
+        "nome": "Blackjack",
+        "tipo": "Jogo de mesa",
+        "variacoes": ["21", "Super 21", "Pontoon"]
+      },
+      {
+        "nome": "Poker",
+        "tipo": "Jogo de mesa",
+        "variacoes": ["Texas Hold'em", "Omaha", "Seven Card Stud"]
+      },
+      {
+        "nome": "Bacará",
+        "tipo": "Jogo de mesa",
+        "variacoes": ["Punto Banco", "Chemin de Fer", "Baccarat Banque"]
+      },
+      {
+        "nome": "Caça-níqueis",
+        "tipo": "Máquina",
+        "variacoes": ["Caça-níqueis clássico", "Caça-níqueis de vídeo", "Caça-níqueis progressivo"]
+      },
+      {
+        "nome": "Vídeo poker",
+        "tipo": "Máquina",
+        "variacoes": ["Jacks or Better", "Deuces Wild", "Joker Poker"]
+      },
+      {
+        "nome": "Keno",
+        "tipo": "Máquina",
+        "variacoes": ["Keno clássico", "Keno de vídeo", "Keno progressivo"]
+      },
+      {
+        "nome": "Bingo",
+        "tipo": "Máquina",
+        "variacoes": ["Bingo clássico", "Bingo de vídeo", "Bingo progressivo"]
+      }
+    ]
+}

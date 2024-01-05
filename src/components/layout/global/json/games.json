@@ -1,0 +1,119 @@
+{
+    "campeonatos": [
+      {
+        "nome": "Premier League",
+        "jogos": [
+          {
+            "id": 1,
+            "timeCasa": "Liverpool",
+            "timeVisitante": "Manchester City",
+            "horario": "2024-01-10T20:00:00",
+            "odds": {
+              "casa": 2.5,
+              "empate": 3.1,
+              "visitante": 2.8
+            }
+          },
+          {
+            "id": 2,
+            "timeCasa": "Liverpool",
+            "timeVisitante": "Manchester City",
+            "horario": "2024-01-10T20:00:00",
+            "odds": {
+              "casa": 2.5,
+              "empate": 3.1,
+              "visitante": 2.8
+            }
+          },
+          {
+            "id": 3,
+            "timeCasa": "Liverpool",
+            "timeVisitante": "Manchester City",
+            "horario": "2024-01-10T20:00:00",
+            "odds": {
+              "casa": 2.5,
+              "empate": 3.1,
+              "visitante": 2.8
+            }
+          }
+        ]
+      },
+      {
+        "nome": "Champions League",
+        "jogos": [
+          {
+            "id": 6,
+            "timeCasa": "Barcelona",
+            "timeVisitante": "Bayern Munich",
+            "horario": "2024-01-11T21:00:00",
+            "odds": {
+              "casa": 2.7,
+              "empate": 3.2,
+              "visitante": 2.6
+            }
+          },
+          {
+            "id": 7,
+            "timeCasa": "Barcelona",
+            "timeVisitante": "Bayern Munich",
+            "horario": "2024-01-11T21:00:00",
+            "odds": {
+              "casa": 2.7,
+              "empate": 3.2,
+              "visitante": 2.6
+            }
+          },
+          {
+            "id": 8,
+            "timeCasa": "Barcelona",
+            "timeVisitante": "Bayern Munich",
+            "horario": "2024-01-11T21:00:00",
+            "odds": {
+              "casa": 2.7,
+              "empate": 3.2,
+              "visitante": 2.6
+            }
+          }
+        ]
+      },
+      {
+        "nome": "LaLiga",
+        "jogos": [
+          {
+            "id": 11,
+            "timeCasa": "Real Madrid",
+            "timeVisitante": "Atletico Madrid",
+            "horario": "2024-01-12T19:00:00",
+            "odds": {
+              "casa": 2.4,
+              "empate": 3.0,
+              "visitante": 2.9
+            }
+          },
+          {
+            "id": 12,
+            "timeCasa": "Real Madrid",
+            "timeVisitante": "Atletico Madrid",
+            "horario": "2024-01-12T19:00:00",
+            "odds": {
+              "casa": 2.4,
+              "empate": 3.0,
+              "visitante": 2.9
+            }
+          },
+          {
+            "id": 13,
+            "timeCasa": "Real Madrid",
+            "timeVisitante": "Atletico Madrid",
+            "horario": "2024-01-12T19:00:00",
+            "odds": {
+              "casa": 2.4,
+              "empate": 3.0,
+              "visitante": 2.9
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

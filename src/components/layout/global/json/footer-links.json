@@ -1,0 +1,44 @@
+{
+    "links": [
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Regras de Apostas"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Termos e Condições"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Política de Jogo Responsável"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Segurança"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Política de Bônus"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Central de Ajuda"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Meios de pagamento"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Política de Privacidade"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Contato"
+        },
+        {
+            "url": "http://localhost:8000/api/v1/roles/1",
+            "title": "Afiliados"
+        }
+    ]
+}

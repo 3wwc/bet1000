@@ -1,0 +1,616 @@
+{
+    "esportes": [
+      {
+        "nome": "Futebol",
+        "campeonatos": [
+            {
+              "nome": "Premier League",
+              "jogos": [
+                {
+                  "id": 1,
+                  "timeCasa": "Liverpool",
+                  "timeVisitante": "Manchester City",
+                  "horario": "2024-01-10T20:00:00",
+                  "odds": {
+                    "casa": 2.5,
+                    "empate": 3.1,
+                    "visitante": 2.8
+                  }
+                },
+                {
+                  "id": 2,
+                  "timeCasa": "Chelsea",
+                  "timeVisitante": "Arsenal",
+                  "horario": "2024-01-11T18:00:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.2,
+                    "visitante": 3.0
+                  }
+                },
+                {
+                  "id": 3,
+                  "timeCasa": "Manchester United",
+                  "timeVisitante": "Tottenham",
+                  "horario": "2024-01-12T16:30:00",
+                  "odds": {
+                    "casa": 2.6,
+                    "empate": 3.3,
+                    "visitante": 2.7
+                  }
+                },
+                {
+                  "id": 4,
+                  "timeCasa": "Leicester City",
+                  "timeVisitante": "Everton",
+                  "horario": "2024-01-13T19:00:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.1,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 5,
+                  "timeCasa": "West Ham United",
+                  "timeVisitante": "Southampton",
+                  "horario": "2024-01-14T15:15:00",
+                  "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.2
+                  }
+                },
+                {
+                  "id": 6,
+                  "timeCasa": "Wolverhampton",
+                  "timeVisitante": "Newcastle United",
+                  "horario": "2024-01-15T17:30:00",
+                  "odds": {
+                    "casa": 2.5,
+                    "empate": 3.0,
+                    "visitante": 2.8
+                  }
+                },
+                {
+                  "id": 7,
+                  "timeCasa": "Leeds United",
+                  "timeVisitante": "Crystal Palace",
+                  "horario": "2024-01-16T14:00:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.2,
+                    "visitante": 3.1
+                  }
+                },
+                {
+                  "id": 8,
+                  "timeCasa": "Brighton & Hove Albion",
+                  "timeVisitante": "Burnley",
+                  "horario": "2024-01-17T19:45:00",
+                  "odds": {
+                    "casa": 2.6,
+                    "empate": 3.3,
+                    "visitante": 2.7
+                  }
+                },
+                {
+                  "id": 9,
+                  "timeCasa": "Fulham",
+                  "timeVisitante": "Sheffield United",
+                  "horario": "2024-01-18T20:00:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.0,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 10,
+                  "timeCasa": "Aston Villa",
+                  "timeVisitante": "West Bromwich Albion",
+                  "horario": "2024-01-19T17:00:00",
+                  "odds": {
+                    "casa": 2.2,
+                    "empate": 3.5,
+                    "visitante": 3.2
+                  }
+                }
+              ]
+            },
+            {
+              "nome": "Champions League",
+              "jogos": [
+                {
+                  "id": 11,
+                  "timeCasa": "Barcelona",
+                  "timeVisitante": "Bayern Munich",
+                  "horario": "2024-01-11T21:00:00",
+                  "odds": {
+                    "casa": 2.7,
+                    "empate": 3.2,
+                    "visitante": 2.6
+                  }
+                },
+                {
+                  "id": 12,
+                  "timeCasa": "Real Madrid",
+                  "timeVisitante": "Juventus",
+                  "horario": "2024-01-12T20:00:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.1,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 13,
+                  "timeCasa": "PSG",
+                  "timeVisitante": "Chelsea",
+                  "horario": "2024-01-13T21:45:00",
+                  "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                  }
+                },
+                {
+                  "id": 14,
+                  "timeCasa": "Liverpool",
+                  "timeVisitante": "Manchester City",
+                  "horario": "2024-01-14T19:30:00",
+                  "odds": {
+                    "casa": 2.5,
+                    "empate": 3.1,
+                    "visitante": 2.8
+                  }
+                },
+                {
+                  "id": 15,
+                  "timeCasa": "Bayern Munich",
+                  "timeVisitante": "Barcelona",
+                  "horario": "2024-01-15T20:15:00",
+                  "odds": {
+                    "casa": 2.6,
+                    "empate": 3.2,
+                    "visitante": 2.7
+                  }
+                },
+                {
+                  "id": 16,
+                  "timeCasa": "Juventus",
+                  "timeVisitante": "PSG",
+                  "horario": "2024-01-16T21:00:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.0,
+                    "visitante": 3.0
+                  }
+                },
+                {
+                  "id": 17,
+                  "timeCasa": "Manchester United",
+                  "timeVisitante": "Tottenham",
+                  "horario": "2024-01-17T19:45:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.2,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 18,
+                  "timeCasa": "Arsenal",
+                  "timeVisitante": "Chelsea",
+                  "horario": "2024-01-18T20:30:00",
+                  "odds": {
+                    "casa": 2.5,
+                    "empate": 3.3,
+                    "visitante": 2.6
+                  }
+                },
+                {
+                  "id": 19,
+                  "timeCasa": "Borussia Dortmund",
+                  "timeVisitante": "AC Milan",
+                  "horario": "2024-01-19T18:00:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.1,
+                    "visitante": 3.0
+                  }
+                },
+                {
+                  "id": 20,
+                  "timeCasa": "Manchester City",
+                  "timeVisitante": "Liverpool",
+                  "horario": "2024-01-20T21:15:00",
+                  "odds": {
+                    "casa": 2.6,
+                    "empate": 3.4,
+                    "visitante": 2.5
+                  }
+                }
+              ]
+            },
+            {
+              "nome": "LaLiga",
+              "jogos": [
+                {
+                  "id": 21,
+                  "timeCasa": "Real Madrid",
+                  "timeVisitante": "Atletico Madrid",
+                  "horario": "2024-01-12T19:00:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.0,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 22,
+                  "timeCasa": "Barcelona",
+                  "timeVisitante": "Sevilla",
+                  "horario": "2024-01-13T17:00:00",
+                  "odds": {
+                    "casa": 2.1,
+                    "empate": 3.5,
+                    "visitante": 3.2
+                  }
+                },
+                {
+                  "id": 23,
+                  "timeCasa": "Valencia",
+                  "timeVisitante": "Villarreal",
+                  "horario": "2024-01-14T21:00:00",
+                  "odds": {
+                    "casa": 2.8,
+                    "empate": 3.2,
+                    "visitante": 2.4
+                  }
+                },
+                {
+                  "id": 24,
+                  "timeCasa": "Atletico Madrid",
+                  "timeVisitante": "Real Sociedad",
+                  "horario": "2024-01-15T20:30:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.1,
+                    "visitante": 3.0
+                  }
+                },
+                {
+                  "id": 25,
+                  "timeCasa": "Sevilla",
+                  "timeVisitante": "Real Betis",
+                  "horario": "2024-01-16T19:45:00",
+                  "odds": {
+                    "casa": 2.6,
+                    "empate": 3.4,
+                    "visitante": 2.7
+                  }
+                },
+                {
+                  "id": 26,
+                  "timeCasa": "Villarreal",
+                  "timeVisitante": "Barcelona",
+                  "horario": "2024-01-17T21:15:00",
+                  "odds": {
+                    "casa": 2.2,
+                    "empate": 3.0,
+                    "visitante": 3.1
+                  }
+                },
+                {
+                  "id": 27,
+                  "timeCasa": "Real Sociedad",
+                  "timeVisitante": "Valencia",
+                  "horario": "2024-01-18T18:00:00",
+                  "odds": {
+                    "casa": 2.4,
+                    "empate": 3.2,
+                    "visitante": 2.9
+                  }
+                },
+                {
+                  "id": 28,
+                  "timeCasa": "Real Betis",
+                  "timeVisitante": "Atletico Madrid",
+                  "horario": "2024-01-19T19:30:00",
+                  "odds": {
+                    "casa": 2.3,
+                    "empate": 3.1,
+                    "visitante": 3.0
+                  }
+                },
+                {
+                  "id": 29,
+                  "timeCasa": "Celta Vigo",
+                  "timeVisitante": "Espanyol",
+                  "horario": "2024-01-20T20:00:00",
+                  "odds": {
+                    "casa": 2.5,
+                    "empate": 3.2,
+                    "visitante": 2.8
+                  }
+                },
+                {
+                  "id": 30,
+                  "timeCasa": "Getafe",
+                  "timeVisitante": "Huesca",
+                  "horario": "2024-01-21T14:30:00",
+                  "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                  }
+                }
+              ]
+            }
+          ]
+      },
+      {
+        "nome": "Basquete",
+        "campeonatos": [
+          {
+            "nome": "NBA",
+            "jogos": [
+              {
+                "id": 1001,
+                "timeCasa": "Los Angeles Lakers",
+                "timeVisitante": "Golden State Warriors",
+                "horario": "2024-01-10T20:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 1002,
+                "timeCasa": "Brooklyn Nets",
+                "timeVisitante": "Milwaukee Bucks",
+                "horario": "2024-01-11T19:30:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 1003,
+                "timeCasa": "Chicago Bulls",
+                "timeVisitante": "Boston Celtics",
+                "horario": "2024-01-12T21:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          },
+          {
+            "nome": "EuroLeague",
+            "jogos": [
+              {
+                "id": 1101,
+                "timeCasa": "Real Madrid",
+                "timeVisitante": "CSKA Moscow",
+                "horario": "2024-01-11T20:15:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 1102,
+                "timeCasa": "Fenerbahçe",
+                "timeVisitante": "Panathinaikos",
+                "horario": "2024-01-12T19:45:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 1103,
+                "timeCasa": "Barcelona",
+                "timeVisitante": "Olympiacos",
+                "horario": "2024-01-13T21:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nome": "Vôlei",
+        "campeonatos": [
+          {
+            "nome": "Superliga Brasil",
+            "jogos": [
+              {
+                "id": 2001,
+                "timeCasa": "Sada Cruzeiro",
+                "timeVisitante": "Funvic Taubaté",
+                "horario": "2024-01-10T19:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 2002,
+                "timeCasa": "Sesi-SP",
+                "timeVisitante": "Minas Tênis Clube",
+                "horario": "2024-01-11T20:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 2003,
+                "timeCasa": "Osasco Audax",
+                "timeVisitante": "Flamengo",
+                "horario": "2024-01-12T19:30:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          },
+          {
+            "nome": "Italian Volleyball League",
+            "jogos": [
+              {
+                "id": 2101,
+                "timeCasa": "Sir Safety Perugia",
+                "timeVisitante": "Lube Civitanova",
+                "horario": "2024-01-10T18:30:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 2102,
+                "timeCasa": "Imoco Volley Conegliano",
+                "timeVisitante": "Itas Trentino",
+                "horario": "2024-01-11T20:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 2103,
+                "timeCasa": "Modena Volley",
+                "timeVisitante": "Cucine Lube Civitanova",
+                "horario": "2024-01-12T19:45:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nome": "Futsal",
+        "campeonatos": [
+          {
+            "nome": "Liga Nacional de Futsal",
+            "jogos": [
+              {
+                "id": 3001,
+                "timeCasa": "Magnus Futsal",
+                "timeVisitante": "ACBF Carlos Barbosa",
+                "horario": "2024-01-10T19:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 3002,
+                "timeCasa": "Joinville",
+                "timeVisitante": "Corinthians Futsal",
+                "horario": "2024-01-11T20:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 3003,
+                "timeCasa": "Sorocaba",
+                "timeVisitante": "Cascavel",
+                "horario": "2024-01-12T18:30:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          },
+          {
+            "nome": "UEFA Futsal Champions League",
+            "jogos": [
+              {
+                "id": 3101,
+                "timeCasa": "Barcelona Futsal",
+                "timeVisitante": "Inter Movistar",
+                "horario": "2024-01-10T20:15:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 3102,
+                "timeCasa": "Sporting CP Futsal",
+                "timeVisitante": "Kairat Almaty",
+                "horario": "2024-01-11T19:45:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              },
+              {
+                "id": 3103,
+                "timeCasa": "Benfica Futsal",
+                "timeVisitante": "Dynamo Moscow",
+                "horario": "2024-01-12T21:00:00",
+                "resultado": "A definir",
+                "odds": {
+                    "casa": 2.2,
+                    "empate": 3.4,
+                    "visitante": 3.1
+                }
+              }
+            ]
+          }
+        ]
+      }      
+    ]
+  }
+  

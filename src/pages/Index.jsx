@@ -1,12 +1,12 @@
 import HomeLayout from "../components/layout/content/HomeLayout";
-import MainGames from "../components/layout/global/MainGames";
+import GamesByChampionship from "../components/layout/global/GamesByChampionship";
 import SlideHome from "../components/layout/global/SlideHome";
 
 export default function Home() {
     return (
         <HomeLayout>
             <SlideHome/>
-            <MainGames/>
+            <GamesByChampionship/>
         </HomeLayout>
     )
 }
