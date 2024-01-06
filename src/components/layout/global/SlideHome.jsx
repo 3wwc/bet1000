@@ -13,20 +13,14 @@ export default function SlideHome() {
     const slides = [
         {
             id: 1,
-            title: "Slide 1",
-            content: "This is the first slide",
             img: Slide1
         },
         {
             id: 2,
-            title: "Slide 2",
-            content: "This is the second slide",
             img: Slide2
         },
         {
             id: 3,
-            title: "Slide 3",
-            content: "This is the third slide",
             img: Slide3
         }
     ];
@@ -36,12 +30,17 @@ export default function SlideHome() {
             <Swiper
                 className='home-swiper w-full'
                 modules={[Autoplay]}
+                spaceBetween={20}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false
+                }}
                 slidesPerView={1}
                 loop={true}
             >
                 {slides.map(slide => (
                     <SwiperSlide key={slide.id} className="swiper-slide">
-                        <img src={slide.img} alt={`Slide`} className='w-full h-64' />
+                        <img src={slide.img} alt={`Slide`} className='w-full md:h-64' />
                     </SwiperSlide>
                 ))}
             </Swiper>

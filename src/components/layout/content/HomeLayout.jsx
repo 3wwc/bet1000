@@ -6,7 +6,7 @@ export default function HomeLayout({ children }) {
         <section id="main-home-layout" className="py-4">
             <div className="container-bet">
                 <div className="lg:flex gap-6 items-start">
-                    <div className="lg:w-3/4">
+                    <div className="lg:w-3/4 grid gap-4">
                         {children}
                     </div>
                     
