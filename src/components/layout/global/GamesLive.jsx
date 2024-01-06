@@ -43,7 +43,7 @@ export default function GamesLive() {
                                         
                                         <p className="hidden md:block">
                                             <Link
-                                                to={`/bet/${jogo.id}`}
+                                                to={`/game/${jogo.id}`}
                                                 className="underline text-sm hover:text-zinc-700 mr-4"
                                             >
                                                 Mais sobre o jogo

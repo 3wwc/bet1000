@@ -2,6 +2,7 @@
     "esportes": [
       {
         "nome": "Futebol",
+        "slug": "futebol",
         "campeonatos": [
             {
               "nome": "Premier League",
@@ -352,6 +353,7 @@
       },
       {
         "nome": "Basquete",
+        "slug": "basquete",
         "campeonatos": [
           {
             "nome": "NBA",
@@ -439,6 +441,7 @@
       },
       {
         "nome": "Vôlei",
+        "slug": "volei",
         "campeonatos": [
           {
             "nome": "Superliga Brasil",
@@ -526,6 +529,7 @@
       },
       {
         "nome": "Futsal",
+        "slug": "futsal",
         "campeonatos": [
           {
             "nome": "Liga Nacional de Futsal",

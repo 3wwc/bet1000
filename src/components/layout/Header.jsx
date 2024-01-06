@@ -53,18 +53,18 @@ export default function Header() {
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0 border-l border-l-[#621924]'>
-                                <Link to={'/futebol'} className='flex gap-2 items-center flex-shrink-0'>
+                                <Link to={'/play/futebol'} className='flex gap-2 items-center flex-shrink-0'>
                                     <SoccerBall size={20} /> Futebol
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0'>
-                                <Link to={'/basquete'} className='flex gap-2 items-center flex-shrink-0'>
+                                <Link to={'/play/basquete'} className='flex gap-2 items-center flex-shrink-0'>
                                     <Basketball size={20} /> Basquete
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0'>
-                                <Link to={'/tenis'} className='flex gap-2 items-center flex-shrink-0'>
-                                    <TennisBall size={20} /> Tênis
+                                <Link to={'/play/volei'} className='flex gap-2 items-center flex-shrink-0'>
+                                    <TennisBall size={20} /> Volei
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0 border-l border-l-[#621924]'>

@@ -107,7 +107,7 @@ export default function MainGames() {
 
                     <div className="hidden md:flex items-center">
                         <Link
-                            to={`/bet/${index}`}
+                            to={`/game/${index}`}
                             className="underline text-sm hover:text-zinc-700 mr-4"
                         >
                             Mais sobre o jogo

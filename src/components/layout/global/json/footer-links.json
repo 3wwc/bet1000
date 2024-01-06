@@ -1,43 +1,43 @@
 {
     "links": [
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/regras-de-apostas",
             "title": "Regras de Apostas"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/termos-e-condicoes",
             "title": "Termos e Condições"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/politica-de-jogo-responsavel",
             "title": "Política de Jogo Responsável"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/seguranca",
             "title": "Segurança"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/politica-de-bonus",
             "title": "Política de Bônus"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/central-de-ajuda",
             "title": "Central de Ajuda"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/meios-de-pagamento",
             "title": "Meios de pagamento"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/politica-de-privacidade",
             "title": "Política de Privacidade"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/contato",
             "title": "Contato"
         },
         {
-            "url": "http://localhost:8000/api/v1/roles/1",
+            "url": "/pagina/afilie-se",
             "title": "Afiliados"
         }
     ]
