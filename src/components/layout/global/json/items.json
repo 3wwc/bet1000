@@ -3,6 +3,7 @@
       {
         "nome": "Futebol",
         "slug": "futebol",
+        "logo": "https://via.placeholder.com/50",
         "campeonatos": [
             {
               "nome": "Premier League",
@@ -354,6 +355,7 @@
       {
         "nome": "Basquete",
         "slug": "basquete",
+        "logo": "https://via.placeholder.com/50",
         "campeonatos": [
           {
             "nome": "NBA",
@@ -442,6 +444,7 @@
       {
         "nome": "Vôlei",
         "slug": "volei",
+        "logo": "https://via.placeholder.com/50",
         "campeonatos": [
           {
             "nome": "Superliga Brasil",
@@ -530,6 +533,7 @@
       {
         "nome": "Futsal",
         "slug": "futsal",
+        "logo": "https://via.placeholder.com/50",
         "campeonatos": [
           {
             "nome": "Liga Nacional de Futsal",

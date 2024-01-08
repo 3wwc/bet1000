@@ -25,3 +25,16 @@
         }
     }
 }
+
+.img-casino {
+    transition: all 0.3s ease-in;
+    &:hover {
+        .img-casino-box {
+            top: 0!important;
+        }
+    }
+}
+
+.casino-swiper {
+    max-width: 100%;
+}

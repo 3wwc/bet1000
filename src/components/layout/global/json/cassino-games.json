@@ -1,44 +1,54 @@
 {
     "jogosDeCassino": [
       {
-        "nome": "Roleta",
-        "tipo": "Jogo de mesa",
-        "variacoes": ["Americana", "Europeia", "Francesa"]
+        "nome": "Mines",
+        "tipo": "Casino",
+        "image": "/images/games/Mines.png"
       },
       {
-        "nome": "Blackjack",
-        "tipo": "Jogo de mesa",
-        "variacoes": ["21", "Super 21", "Pontoon"]
+        "nome": "Fortune Tiger",
+        "tipo": "Casino",
+        "image": "/images/games/Fortune.png"
       },
       {
-        "nome": "Poker",
-        "tipo": "Jogo de mesa",
-        "variacoes": ["Texas Hold'em", "Omaha", "Seven Card Stud"]
+        "nome": "Aviatrix",
+        "tipo": "Casino",
+        "image": "/images/games/nft-aviatrix.png"
       },
       {
-        "nome": "Bacará",
-        "tipo": "Jogo de mesa",
-        "variacoes": ["Punto Banco", "Chemin de Fer", "Baccarat Banque"]
+        "nome": "Aviator",
+        "tipo": "Casino",
+        "image": "/images/games/spb-tb-aviator.png"
       },
       {
-        "nome": "Caça-níqueis",
-        "tipo": "Máquina",
-        "variacoes": ["Caça-níqueis clássico", "Caça-níqueis de vídeo", "Caça-níqueis progressivo"]
+        "nome": "Spaceman",
+        "tipo": "Casino",
+        "image": "/images/games/1301.png"
       },
       {
-        "nome": "Vídeo poker",
-        "tipo": "Máquina",
-        "variacoes": ["Jacks or Better", "Deuces Wild", "Joker Poker"]
+        "nome": "Big Bass Cash",
+        "tipo": "Casino",
+        "image": "/images/games/1320.png"
       },
       {
-        "nome": "Keno",
-        "tipo": "Máquina",
-        "variacoes": ["Keno clássico", "Keno de vídeo", "Keno progressivo"]
+        "nome": "Fortune Ox",
+        "tipo": "Casino",
+        "image": "/images/games/pgs-slot-fortuneOx.png"
       },
       {
-        "nome": "Bingo",
-        "tipo": "Máquina",
-        "variacoes": ["Bingo clássico", "Bingo de vídeo", "Bingo progressivo"]
+        "nome": "Prosperity Fortune Tree",
+        "tipo": "Casino",
+        "image": "/images/games/pgs-slot-prosperityfortuneT.png"
+      },
+      {
+        "nome": "Big Bass Amazon Extreme",
+        "tipo": "Casino",
+        "image": "/images/games/vs10bbextreme.png"
+      },
+      {
+        "nome": "Gate of Olympus",
+        "tipo": "Casino",
+        "image": "/images/games/vs20olympx.png"
       }
     ]
 }

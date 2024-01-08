@@ -1,19 +1,25 @@
 import PropTypes from "prop-types";
 
-export default function CasinoLayout({ children }) {
+export default function CasinoLayout({ children, slide }) {
     return (
-        <section id="main-casino-layout" className="py-4">
-            <div className="container-bet">
-                <div className="grid">
-                    <div>
-                        {children}
+        <>
+            <div>
+                {slide}
+            </div>
+            <section id="main-casino-layout" className="py-4">
+                <div className="container-bet">
+                    <div className="grid">
+                        <div>
+                            {children}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 
 CasinoLayout.propTypes = {
     children: PropTypes.node.isRequired,
+    slide: PropTypes.node.isRequired
 };
