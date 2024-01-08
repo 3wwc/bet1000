@@ -16,7 +16,7 @@ export default function Header() {
                             <ul className='flex gap-4 mt-2 uppercase'>
                                 <li><Link to={'/'}>Esportes</Link></li>
                                 <li><Link to={'/live'}>Ao Vivo</Link></li>
-                                <li><Link to={'/casino'} className='text-yellow-500 font-bold'>Cassino</Link></li>
+                                <li><Link to={'/casino'} className='text-secondary font-bold'>Cassino</Link></li>
                             </ul>
                         </nav>
                     </div>
