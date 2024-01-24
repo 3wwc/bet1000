@@ -1,8 +1,27 @@
+import { useState } from 'react';
 import { SoccerBall } from "@phosphor-icons/react";
 import GamesResults from "./json/items.json";
-import { Link } from "react-router-dom";
+import { useGame } from '../../context/GameContext';
+import { Link } from 'react-router-dom';
 
 export default function GamesByChampionship() {
+    const { addOrUpdateGame } = useGame();
+    const [selectedOdds, setSelectedOdds] = useState({});
+
+    const handleOddClick = (campeonato, idJogo, oddType, oddValue, timeCasa, timeVisitante) => {
+        const newGame = {
+            campeonato: campeonato,
+            idJogo: idJogo,
+            oddSelecionada: { tipo: oddType, valor: oddValue },
+            times: { casa: timeCasa, visitante: timeVisitante }
+        };
+        addOrUpdateGame(newGame);
+
+        setSelectedOdds(prev => ({ ...prev, [idJogo]: oddType }));
+    };
+
+    const isOddSelected = (idJogo, oddType) => selectedOdds[idJogo] === oddType;
+
     return (
         <div className="js-game-championship">
             {GamesResults.esportes.map((esporte, indexEsporte) => (
@@ -28,18 +47,16 @@ export default function GamesByChampionship() {
                                     </div>
 
                                     <div className="flex gap-4 w-full max-w-[172px] md:max-w-[224px]">
-                                        <button className="bg-zinc-300 hover:bg-zinc-400 w-12 md:w-16 h-12 rounded">
-                                            <span className="hidden md:block text-xs">1</span>
-                                            <p>{jogo.odds.casa}</p>
-                                        </button>
-                                        <button className="bg-zinc-300 hover:bg-zinc-400 w-12 md:w-16 h-12 rounded">
-                                            <span className="hidden md:block text-xs">x</span>
-                                            <p>{jogo.odds.empate}</p>
-                                        </button>
-                                        <button className="bg-zinc-300 hover:bg-zinc-400 w-12 md:w-16 h-12 rounded">
-                                            <span className="hidden md:block text-xs">2</span>
-                                            <p>{jogo.odds.visitante}</p>
-                                        </button>
+                                    {['casa', 'empate', 'visitante'].map(tipo => (
+                                            <button
+                                                key={tipo}
+                                                onClick={() => handleOddClick(campeonato.nome, jogo.id, tipo, jogo.odds[tipo], jogo.timeCasa, jogo.timeVisitante)}
+                                                className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(jogo.id, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
+                                            >
+                                                <span className='text-[9px]'>{tipo}</span>
+                                                <p>{jogo.odds[tipo]}</p>
+                                            </button>
+                                        ))}
                                     </div>
                                     
                                     <p className="hidden md:block">

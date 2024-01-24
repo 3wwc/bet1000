@@ -29,44 +29,51 @@ import Favorites from "./pages/client/Favorites";
 
 import Contact from "./pages/intern/Contact";
 import Security from "./pages/intern/Security";
+import BetsTicket from "./pages/client/BetsTicket";
+import Sports from "./pages/Sports";
+import { GameProvider } from "./components/context/GameContext";
 
 export default function App() {
   return (
     <>
-      <Router>
-        <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
+      <GameProvider>
+        <Router>
+          <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
 
-            <Route path="/registro" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+              <Route path="/registro" element={<Register />} />
+              <Route path="/login" element={<Login />} />
 
-            <Route path="/play/:esporte" element={<PlaySport data={data} />} />
+              <Route path="/play/:esporte" element={<PlaySport data={data} />} />
 
-            <Route path="/live" element={<Live />} />
-            <Route path="/game/:id" element={<BetInfo />} />
-            <Route path="/casino" element={<Cassino />} />
+              <Route path="/esportes" element={<Sports />} />
+              <Route path="/live" element={<Live />} />
+              <Route path="/game/:id" element={<BetInfo />} />
+              <Route path="/casino" element={<Cassino />} />
 
-            <Route path="*" element={<ErrorMessage/>} />
+              <Route path="*" element={<ErrorMessage/>} />
 
-            {/* Routes /minha-conta */}
-            <Route path="/minha-conta" element={<AuthenticatedRoute><Account /></AuthenticatedRoute>}/>
-            <Route path="/minha-conta/depositar" element={<AuthenticatedRoute><Deposit /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/saque" element={<AuthenticatedRoute><Withdraw /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/minhas-apostas" element={<AuthenticatedRoute><Bets /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/favoritos" element={<AuthenticatedRoute><Favorites /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/historico" element={<AuthenticatedRoute><History /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/perfil" element={<AuthenticatedRoute><Profile /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/bonus" element={<AuthenticatedRoute><Bonus /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/suporte" element={<AuthenticatedRoute><Support /></AuthenticatedRoute>} />
-            <Route path="/minha-conta/sair" element={<AuthenticatedRoute><Logout /></AuthenticatedRoute>} />
+              {/* Routes /minha-conta */}
+              <Route path="/minha-conta" element={<AuthenticatedRoute><Account /></AuthenticatedRoute>}/>
+              <Route path="/minha-conta/depositar" element={<AuthenticatedRoute><Deposit /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/saque" element={<AuthenticatedRoute><Withdraw /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/minhas-apostas" element={<AuthenticatedRoute><Bets /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/minhas-apostas/:id" element={<AuthenticatedRoute><BetsTicket /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/favoritos" element={<AuthenticatedRoute><Favorites /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/historico" element={<AuthenticatedRoute><History /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/perfil" element={<AuthenticatedRoute><Profile /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/bonus" element={<AuthenticatedRoute><Bonus /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/suporte" element={<AuthenticatedRoute><Support /></AuthenticatedRoute>} />
+              <Route path="/minha-conta/sair" element={<AuthenticatedRoute><Logout /></AuthenticatedRoute>} />
 
-            {/* Routes /pagina */}
-            <Route path="/pagina/contato" element={<Contact />}/>
-            <Route path="/pagina/seguranca" element={<Security />} />
-          </Routes>
-        <Footer />
-      </Router>
+              {/* Routes /pagina */}
+              <Route path="/pagina/contato" element={<Contact />}/>
+              <Route path="/pagina/seguranca" element={<Security />} />
+            </Routes>
+          <Footer />
+        </Router>
+      </GameProvider>
     </>
   )
 }

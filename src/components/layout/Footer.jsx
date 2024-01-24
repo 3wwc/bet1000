@@ -11,6 +11,7 @@ import santanderImg from "/images/payments/santander_b.webp";
 import bradescoImg from "/images/payments/bradesco_b.webp";
 import bancodobrasilImg from "/images/payments/bancodobrasil_b.webp";
 import pf4Img from "/images/payments/P4F.webp";
+import BetFlutuant from "./global/ui/BetFlutuant";
 
 export default function Footer() {
     return (
@@ -91,6 +92,7 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+        <BetFlutuant/>
         <BarBottom />
         </>
     )

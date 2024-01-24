@@ -1,0 +1,24 @@
+{
+    "esportes": [
+        {
+            "id": 1,
+            "nome": "Futebol",
+            "url": "/play/futebol"
+        },
+        {
+            "id": 2,
+            "nome": "Basquete",
+            "url": "/play/basquete"
+        },
+        {
+            "id": 3,
+            "nome": "Vôlei",
+            "url": "/play/volei"
+        }, 
+        {
+            "id": 4,
+            "nome": "Tênis",
+            "url": "/play/tenis"
+        }
+    ]
+}
