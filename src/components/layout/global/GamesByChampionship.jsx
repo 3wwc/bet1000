@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SoccerBall } from "@phosphor-icons/react";
 import GamesResults from "./json/items.json";
 import { useGame } from '../../context/GameContext';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function GamesByChampionship() {
-    const { addOrUpdateGame } = useGame();
+    const { addOrUpdateGame, selectedGames } = useGame();
     const [selectedOdds, setSelectedOdds] = useState({});
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+        const newSelectedOdds = {};
+        selectedGames.forEach(game => {
+            newSelectedOdds[game.idJogo] = game.oddSelecionada.tipo;
+        });
+        setSelectedOdds(newSelectedOdds);
+    }, [selectedGames]);
+
+    const handleGameClick = (idJogo) => {
+        if (window.innerWidth <= 768) {
+            navigate(`/game/${idJogo}`);
+        }
+    };    
 
     const handleOddClick = (campeonato, idJogo, oddType, oddValue, timeCasa, timeVisitante) => {
         const newGame = {
@@ -35,7 +50,7 @@ export default function GamesByChampionship() {
                             <div className="grid gap-1">
                             {campeonato.jogos.map(jogo => (
                                 <div className="py-3 px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 rounded" key={jogo.id}>
-                                    <div className="flex gap-4 items-center js-game-name">
+                                    <div className="flex gap-4 items-center js-game-name" onClick={() => handleGameClick(jogo.id)}>
                                         <div className="text-center">
                                             <p className="text-xs">Hoje</p>
                                             <p className="text-xs">12h30</p>
@@ -47,7 +62,7 @@ export default function GamesByChampionship() {
                                     </div>
 
                                     <div className="flex gap-4 w-full max-w-[172px] md:max-w-[224px]">
-                                    {['casa', 'empate', 'visitante'].map(tipo => (
+                                        {['casa', 'empate', 'visitante'].map(tipo => (
                                             <button
                                                 key={tipo}
                                                 onClick={() => handleOddClick(campeonato.nome, jogo.id, tipo, jogo.odds[tipo], jogo.timeCasa, jogo.timeVisitante)}
