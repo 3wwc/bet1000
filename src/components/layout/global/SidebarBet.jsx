@@ -44,7 +44,7 @@ export default function SidebarBet() {
     };
 
     return (
-        <>
+        <div className='w-full h-screen overflow-y-scroll'>
             <div className="hidden lg:block w-full bg-zinc-100 rounded-2xl mb-4">
                 <div className="w-full py-3 text-center border-b-2 border-secondary">
                     <p className="uppercase font-bold">Minhas Apostas</p>
@@ -122,7 +122,7 @@ export default function SidebarBet() {
                 <img src="https://via.placeholder.com/500x300" className="w-full" alt="" />
                 <img src="https://via.placeholder.com/500x300" className="w-full" alt="" />
             </div>
-        </>
+        </div>
     );
 }
 

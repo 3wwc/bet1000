@@ -32,6 +32,7 @@ import Security from "./pages/intern/Security";
 import BetsTicket from "./pages/client/BetsTicket";
 import Sports from "./pages/Sports";
 import { GameProvider } from "./components/context/GameContext";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 export default function App() {
   return (
@@ -39,6 +40,7 @@ export default function App() {
       <GameProvider>
         <Router>
           <Header />
+            <ScrollToTop/>
             <Routes>
               <Route path="/" element={<Home />} />
 

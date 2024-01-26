@@ -1,13 +1,33 @@
 import { useEffect, useState } from 'react';
-import { SoccerBall } from "@phosphor-icons/react";
-import GamesResults from "./json/items.json";
+import { Lock, SoccerBall } from "@phosphor-icons/react";
 import { useGame } from '../../context/GameContext';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function GamesByChampionship() {
     const { addOrUpdateGame, selectedGames } = useGame();
     const [selectedOdds, setSelectedOdds] = useState({});
+    const [campeonatos, setCampeonatos] = useState([]);
+    const [partidas, setPartidas] = useState([]);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        fetch('https://cxlotto.app/bet1000/api/campeonatos.php')
+            .then(response => response.json())
+            .then(data => setCampeonatos(data));
+    }, []);
+
+    useEffect(() => {
+        campeonatos.forEach(campeonato => {
+            fetch(`https://cxlotto.app/bet1000/api/partidas.php?cp=${campeonato.idCampeonato}`)
+                .then(response => response.json())
+                .then(data => {
+                    setPartidas(prevPartidas => ({
+                        ...prevPartidas,
+                        [campeonato.idCampeonato]: data
+                    }));
+                });
+        });
+    }, [campeonatos]);
     
     useEffect(() => {
         const newSelectedOdds = {};
@@ -18,17 +38,30 @@ export default function GamesByChampionship() {
     }, [selectedGames]);
 
     const handleGameClick = (idJogo) => {
-        if (window.innerWidth <= 768) {
-            navigate(`/game/${idJogo}`);
-        }
-    };    
+        navigate(`/game/${idJogo}`);
+    };
+    
+    function formatarDataHora(dataHora) {
+        const data = new Date(dataHora);
+        const dia = data.getDate().toString().padStart(2, '0');
+        const mes = (data.getMonth() + 1).toString().padStart(2, '0');
+        const horas = data.getHours().toString().padStart(2, '0');
+        const minutos = data.getMinutes().toString().padStart(2, '0');
+      
+        return (
+            <>
+                <p className='text-xs'>{`${dia}/${mes}`}</p>
+                <p className='text-xs'>{`${horas}h${minutos}`}</p>
+            </>
+        );
+    }
 
-    const handleOddClick = (campeonato, idJogo, oddType, oddValue, timeCasa, timeVisitante) => {
+    const handleOddClick = (campeonato, idJogo, oddType, oddValue, time1, time2) => {
         const newGame = {
             campeonato: campeonato,
             idJogo: idJogo,
             oddSelecionada: { tipo: oddType, valor: oddValue },
-            times: { casa: timeCasa, visitante: timeVisitante }
+            times: { casa: time1, visitante: time2 }
         };
         addOrUpdateGame(newGame);
 
@@ -39,52 +72,50 @@ export default function GamesByChampionship() {
 
     return (
         <div className="js-game-championship">
-            {GamesResults.esportes.map((esporte, indexEsporte) => (
-                <div className="mb-4" key={indexEsporte}>
-                    {esporte.campeonatos.map((campeonato, indexCampeonato) => (
-                        <div key={indexCampeonato} className="mb-2">
-                            <div className="py-2 px-4 bg-zinc-800 text-white mb-1 rounded flex items-center gap-2">                           
-                                <SoccerBall size={20} />
-                                <h3>{campeonato.nome}</h3>
-                            </div>
-                            <div className="grid gap-1">
-                            {campeonato.jogos.map(jogo => (
-                                <div className="py-3 px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 rounded" key={jogo.id}>
-                                    <div className="flex gap-4 items-center js-game-name" onClick={() => handleGameClick(jogo.id)}>
-                                        <div className="text-center">
-                                            <p className="text-xs">Hoje</p>
-                                            <p className="text-xs">12h30</p>
-                                        </div>
-                                        <div className="games">
-                                            <p className="truncate">{jogo.timeCasa}</p>
-                                            <p className="truncate">{jogo.timeVisitante}</p>
-                                        </div>
-                                    </div>
+            {campeonatos.map(campeonato => (
+                <div key={campeonato.idCampeonato}>
+                    <div className="py-2 px-4 bg-zinc-800 text-white mb-1 rounded flex items-center gap-2">                           
+                        <SoccerBall size={20} />
+                        <h3>{campeonato.campeonato}</h3>
+                    </div>
+                    {partidas[campeonato.idCampeonato] && partidas[campeonato.idCampeonato].map(partida => (
+                        <div className="py-3 px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 rounded" key={partida.idPartida}>
 
-                                    <div className="flex gap-4 w-full max-w-[172px] md:max-w-[224px]">
-                                        {['casa', 'empate', 'visitante'].map(tipo => (
-                                            <button
-                                                key={tipo}
-                                                onClick={() => handleOddClick(campeonato.nome, jogo.id, tipo, jogo.odds[tipo], jogo.timeCasa, jogo.timeVisitante)}
-                                                className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(jogo.id, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
-                                            >
-                                                <span className='text-[9px]'>{tipo}</span>
-                                                <p>{jogo.odds[tipo]}</p>
-                                            </button>
-                                        ))}
-                                    </div>
-                                    
-                                    <p className="hidden md:block">
-                                        <Link
-                                            to={`/game/${jogo.id}`}
-                                            className="underline text-sm hover:text-zinc-700 mr-4"
-                                        >
-                                            Mais sobre o jogo
-                                        </Link>
-                                    </p>
+                            <div className="flex gap-4 items-center cursor-pointer js-game-name" onClick={() => handleGameClick(partida.idPartida)}>
+                                <div className="text-center">
+                                    <div>{formatarDataHora(partida.dataPartida)}</div>
                                 </div>
-                            ))}
+                                <div className="games">
+                                    <p className="truncate">{partida.time1}</p>
+                                    <p className="truncate">{partida.time2}</p>
+                                </div>
                             </div>
+
+                            <div className="flex gap-4 w-full max-w-[172px] md:max-w-[224px]">
+                                {['casa', 'empate', 'visitante'].map(tipo => {
+                                    const dadosOdd = partida.odds[tipo] || {};
+                                    return (
+                                        <button
+                                            key={tipo}
+                                            onClick={() => dadosOdd.cotacao && handleOddClick(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
+                                            className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
+                                            disabled={!dadosOdd.cotacao}
+                                        >
+                                            <span className='text-[9px]'>{tipo}</span>
+                                            <p>{dadosOdd.cotacao ? dadosOdd.cotacao : <Lock className='mx-auto' size={20} />}</p>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                            
+                            <p className="hidden md:block">
+                                <Link
+                                    to={`/game/${partida.idPartida}`}
+                                    className="underline text-sm hover:text-zinc-700 mr-4"
+                                >
+                                    Mais sobre o jogo
+                                </Link>
+                            </p>
                         </div>
                     ))}
                 </div>

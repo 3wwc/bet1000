@@ -37,9 +37,7 @@ export default function PlaySport({ data }) {
   };
 
   const handleGameClick = (idJogo) => {
-      if (window.innerWidth <= 768) {
-          navigate(`/game/${idJogo}`);
-      }
+        navigate(`/game/${idJogo}`);
   }; 
 
   const isOddSelected = (idJogo, oddType) => selectedOdds[idJogo] === oddType;
@@ -66,7 +64,7 @@ export default function PlaySport({ data }) {
                   <div className="grid gap-1">
                   {campeonato.jogos.map(jogo => (
                       <div className="py-3 px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 rounded" key={jogo.id}>
-                          <div className="flex gap-4 items-center js-game-name" onClick={() => handleGameClick(jogo.id)}>
+                          <div className="flex gap-4 items-center cursor-pointer js-game-name" onClick={() => handleGameClick(jogo.id)}>
                               <div className="text-center">
                                   <p className="text-xs">Hoje</p>
                                   <p className="text-xs">12h30</p>
