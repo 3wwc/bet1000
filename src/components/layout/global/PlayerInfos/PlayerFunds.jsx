@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function PlayerFunds() {
     const [saldo, setSaldo] = useState('');
 
@@ -10,7 +12,7 @@ export default function PlayerFunds() {
 
             if (token && id) {
                 try {
-                    const response = await fetch(`https://cryptoscore.app/apiHomologa/saldo.php?id=${id}&token=${token}`);
+                    const response = await fetch(`${apiUrl}saldo.php?id=${id}&token=${token}`);
                     const data = await response.json();
 
                     if (data && data.saldo !== undefined) {

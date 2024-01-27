@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function Register() {
     const [formData, setFormData] = useState({
         cpf: '',
@@ -65,7 +67,7 @@ export default function Register() {
         };
     
         try {
-            const response = await fetch('https://cryptoscore.app/apiHomologa/cadastraUsuario.php', {
+            const response = await fetch(`${apiUrl}cadastraUsuario.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function Profile() {
     const [cpf, setCpf] = useState('');
     const [nome, setNome] = useState('');
@@ -12,7 +14,7 @@ export default function Profile() {
         const id = localStorage.getItem('id');
         const token = localStorage.getItem('token');
 
-        fetch(`https://betbicho.top/api/buscaCliente.php?id=${id}&token=${token}`)
+        fetch(`${apiUrl}buscaCliente.php?id=${id}&token=${token}`)
             .then(response => response.json())
             .then(data => {
                 setCpf(data.cpf);

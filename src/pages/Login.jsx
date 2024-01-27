@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function Login() {
     const [data, setData] = useState({});
     const [error, setError] = useState(null);
@@ -22,7 +24,7 @@ export default function Login() {
         event.preventDefault();
     
         try {
-            const response = await fetch('https://cryptoscore.app/apiHomologa/login.php', {
+            const response = await fetch(`${apiUrl}login.php`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

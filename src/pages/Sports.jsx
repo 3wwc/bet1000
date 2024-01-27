@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function Sports() {
     const [esportes, setEsportes] = useState([]);
 
     useEffect(() => {
-        fetch('https://cxlotto.app/bet1000/api/esportes.php')
+        fetch(`${apiUrl}esportes.php`)
             .then(response => response.json())
             .then(data => setEsportes(data));
     }, []);

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Stadium from "/images/sports/stadium.webp";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function HeaderBet() {
     const { id } = useParams();
     const [partida, setPartida] = useState(null);
@@ -9,7 +11,7 @@ export default function HeaderBet() {
     useEffect(() => {
         const fetchPartida = async () => {
             try {
-                const response = await fetch(`https://cxlotto.app/bet1000/api/partidas.php?p=${id}`);
+                const response = await fetch(`${apiUrl}partidas.php?p=${id}`);
                 const data = await response.json();
                 if (data && data.length > 0) {
                     setPartida(data[0]);

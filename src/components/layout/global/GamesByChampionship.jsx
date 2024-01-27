@@ -3,22 +3,24 @@ import { Lock, SoccerBall } from "@phosphor-icons/react";
 import { useGame } from '../../context/GameContext';
 import { Link, useNavigate } from 'react-router-dom';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function GamesByChampionship() {
-    const { addOrUpdateGame, selectedGames } = useGame();
+    const { addOrUpdateGame, removeGame, selectedGames } = useGame();
     const [selectedOdds, setSelectedOdds] = useState({});
     const [campeonatos, setCampeonatos] = useState([]);
     const [partidas, setPartidas] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://cxlotto.app/bet1000/api/campeonatos.php')
+        fetch(`${apiUrl}campeonatos.php`)
             .then(response => response.json())
             .then(data => setCampeonatos(data));
     }, []);
 
     useEffect(() => {
         campeonatos.forEach(campeonato => {
-            fetch(`https://cxlotto.app/bet1000/api/partidas.php?cp=${campeonato.idCampeonato}`)
+            fetch(`${apiUrl}partidas.php?cp=${campeonato.idCampeonato}`)
                 .then(response => response.json())
                 .then(data => {
                     setPartidas(prevPartidas => ({
@@ -56,16 +58,24 @@ export default function GamesByChampionship() {
         );
     }
 
-    const handleOddClick = (campeonato, idJogo, oddType, oddValue, time1, time2) => {
-        const newGame = {
-            campeonato: campeonato,
-            idJogo: idJogo,
-            oddSelecionada: { tipo: oddType, valor: oddValue },
-            times: { casa: time1, visitante: time2 }
-        };
-        addOrUpdateGame(newGame);
-
-        setSelectedOdds(prev => ({ ...prev, [idJogo]: oddType }));
+    const toggleGameSelection = (campeonato, idJogo, oddType, oddValue, time1, time2) => {
+        if (isOddSelected(idJogo, oddType)) {
+            removeGame(idJogo);
+            setSelectedOdds(prev => {
+                const newOdds = { ...prev };
+                delete newOdds[idJogo];
+                return newOdds;
+            });
+        } else {
+            const newGame = {
+                campeonato: campeonato,
+                idJogo: idJogo,
+                oddSelecionada: { tipo: oddType, valor: oddValue },
+                times: { casa: time1, visitante: time2 }
+            };
+            addOrUpdateGame(newGame);
+            setSelectedOdds(prev => ({ ...prev, [idJogo]: oddType }));
+        }
     };
 
     const isOddSelected = (idJogo, oddType) => selectedOdds[idJogo] === oddType;
@@ -97,8 +107,8 @@ export default function GamesByChampionship() {
                                     return (
                                         <button
                                             key={tipo}
-                                            onClick={() => dadosOdd.cotacao && handleOddClick(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
-                                            className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
+                                            onClick={() => dadosOdd.cotacao && toggleGameSelection(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
+                                            className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400 text-primary'}`}
                                             disabled={!dadosOdd.cotacao}
                                         >
                                             <span className='text-[9px]'>{tipo}</span>

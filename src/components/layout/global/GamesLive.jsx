@@ -3,8 +3,10 @@ import { Lock, SoccerBall } from "@phosphor-icons/react";
 import { Link, useNavigate } from 'react-router-dom';
 import { useGame } from '../../context/GameContext';
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export default function GamesLive() {
-    const { addOrUpdateGame, selectedGames } = useGame();
+    const { addOrUpdateGame, removeGame, selectedGames } = useGame();
     const [campeonatos, setCampeonatos] = useState([]);
     const [partidas, setPartidas] = useState([]);
     const [selectedOdds, setSelectedOdds] = useState({});
@@ -14,7 +16,7 @@ export default function GamesLive() {
         let isMounted = true;
     
         const fetchCampeonatos = async () => {
-            const response = await fetch('https://cxlotto.app/bet1000/api/campeonatos.php');
+            const response = await fetch(`${apiUrl}campeonatos.php`);
             const data = await response.json();
             if (isMounted) setCampeonatos(data);
         };
@@ -32,7 +34,7 @@ export default function GamesLive() {
             const sixHoursLater = new Date(now.getTime() + 6 * 60 * 60 * 1000);
     
             campeonatos.forEach(async campeonato => {
-                const response = await fetch(`https://cxlotto.app/bet1000/api/partidas.php?cp=${campeonato.idCampeonato}`);
+                const response = await fetch(`${apiUrl}partidas.php?cp=${campeonato.idCampeonato}`);
                 const data = await response.json();
     
                 const partidasFiltradas = data.filter(partida => {
@@ -58,18 +60,26 @@ export default function GamesLive() {
 
     const handleGameClick = (idJogo) => {
         navigate(`/game/${idJogo}`);
-    };    
+    };
 
-    const handleOddClick = (campeonato, idJogo, oddType, oddValue, time1, time2) => {
-        const newGame = {
-            campeonato: campeonato,
-            idJogo: idJogo,
-            oddSelecionada: { tipo: oddType, valor: oddValue },
-            times: { casa: time1, visitante: time2 }
-        };
-        addOrUpdateGame(newGame);
-
-        setSelectedOdds(prev => ({ ...prev, [idJogo]: oddType }));
+    const toggleGameSelection = (campeonato, idJogo, oddType, oddValue, time1, time2) => {
+        if (isOddSelected(idJogo, oddType)) {
+            removeGame(idJogo);
+            setSelectedOdds(prev => {
+                const newOdds = { ...prev };
+                delete newOdds[idJogo];
+                return newOdds;
+            });
+        } else {
+            const newGame = {
+                campeonato: campeonato,
+                idJogo: idJogo,
+                oddSelecionada: { tipo: oddType, valor: oddValue },
+                times: { casa: time1, visitante: time2 }
+            };
+            addOrUpdateGame(newGame);
+            setSelectedOdds(prev => ({ ...prev, [idJogo]: oddType }));
+        }
     };
     
     function formatarDataHora(dataHora) {
@@ -123,7 +133,7 @@ export default function GamesLive() {
                                             return (
                                                 <button
                                                     key={tipo}
-                                                    onClick={() => dadosOdd.cotacao && handleOddClick(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
+                                                    onClick={() => dadosOdd.cotacao && toggleGameSelection(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
                                                     className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
                                                     disabled={!dadosOdd.cotacao}
                                                 >
