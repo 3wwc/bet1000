@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useState } from "react";
+import 'react-toastify/dist/ReactToastify.css';
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export default function Register() {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         cpf: '',
         nome: '',
@@ -17,6 +22,7 @@ export default function Register() {
     });
 
     const handleChange = (event) => {
+
         const { name, value } = event.target;
         let maskedValue = value;
 
@@ -63,7 +69,8 @@ export default function Register() {
             email: formData.email,
             telefone: formData.telefone,
             login: formData.login,
-            senha: formData.senha
+            senha: formData.senha,
+            confirmaSenha: formData.confirmaSenha
         };
     
         try {
@@ -76,7 +83,21 @@ export default function Register() {
             });
     
             const responseData = await response.json();
-            console.log(responseData);
+            // console.log(responseData);
+            if (responseData.error === 0) {
+                toast.success(responseData.msg, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+                navigate('/login');
+            } else {
+                toast.error(responseData.message);
+            }
         } catch (error) {
             console.error('Erro ao enviar formulário:', error);
         }

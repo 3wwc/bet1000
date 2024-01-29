@@ -96,8 +96,14 @@ export default function GamesByChampionship() {
                                     <div>{formatarDataHora(partida.dataPartida)}</div>
                                 </div>
                                 <div className="games">
-                                    <p className="truncate">{partida.time1}</p>
-                                    <p className="truncate">{partida.time2}</p>
+                                    <p className="truncate flex gap-2">
+                                        <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
+                                        {partida.time1}
+                                    </p>
+                                    <p className="truncate flex gap-2">
+                                        <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
+                                        {partida.time2}
+                                    </p>
                                 </div>
                             </div>
 

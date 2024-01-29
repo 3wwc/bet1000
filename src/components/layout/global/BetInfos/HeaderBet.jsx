@@ -37,7 +37,8 @@ export default function HeaderBet() {
         <div className="py-12 bg-cover bg-center text-white" style={{backgroundImage: `url(${Stadium})`}}>
             <div className="md:w-5/6 mx-auto">
                 <div className="flex justify-center items-center gap-5">
-                    <div className="">
+                    <div className="flex flex-col items-center text-center">
+                        <img src="https://cryptoscore.app/times/sem_escudo.png" alt={`Escudo ${partida.time1}`} />
                         <p>{partida.time1}</p>
                     </div>
                     <div className="flex flex-col items-center">
@@ -46,7 +47,8 @@ export default function HeaderBet() {
                         </div>
                         <p className="text-xs font-bold">Horário da Partida</p>
                     </div>
-                    <div className="">
+                    <div className="flex flex-col items-center text-center">
+                        <img src="https://cryptoscore.app/times/sem_escudo.png" alt={`Escudo ${partida.time2}`} />
                         {partida.time2}
                     </div>
                 </div>

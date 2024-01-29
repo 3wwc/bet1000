@@ -122,8 +122,14 @@ export default function GamesLive() {
                                             <div>{formatarDataHora(partida.dataPartida)}</div>
                                         </div>
                                         <div className="games">
-                                            <p className="truncate">{partida.time1}</p>
-                                            <p className="truncate">{partida.time2}</p>
+                                            <p className="truncate flex gap-2">
+                                                <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
+                                                {partida.time1}
+                                            </p>
+                                            <p className="truncate flex gap-2">
+                                                <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
+                                                {partida.time2}
+                                            </p>
                                         </div>
                                     </div>
 
@@ -134,7 +140,7 @@ export default function GamesLive() {
                                                 <button
                                                     key={tipo}
                                                     onClick={() => dadosOdd.cotacao && toggleGameSelection(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
-                                                    className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400'}`}
+                                                    className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400 text-primary'}`}
                                                     disabled={!dadosOdd.cotacao}
                                                 >
                                                     <span className='text-[9px]'>{tipo}</span>
