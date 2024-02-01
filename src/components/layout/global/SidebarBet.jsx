@@ -6,7 +6,7 @@ const BetDetails = ({ game, onRemove }) => (
     <div className="bg-white border border-zinc-300 rounded py-3 px-3">
         <div className="flex justify-between items-center mb-2">
             <div>
-                <span className="block font-bold">{game.campeonato}</span>
+                <span className="block font-bold text-xs">{game.campeonato}</span>
                 <span>{game.times.casa} vs {game.times.visitante}</span>
             </div>
             <Trash size={20} className='text-red-600 cursor-pointer' role="button" aria-label="Remove bet" onClick={() => onRemove(game.idJogo)} />

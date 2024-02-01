@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { isTokenValid } from '../auth/utils/Auth';
-import { Basketball, HouseSimple, NumberCircleOne, SoccerBall, Star, TennisBall, UserList } from '@phosphor-icons/react';
+import { HouseSimple, NumberCircleOne, Star, UserList } from '@phosphor-icons/react';
 
 import Logo from '/images/logo.png';
 import LoginButtons from './global/ui/LoginButtons';
@@ -49,17 +49,17 @@ export default function Header() {
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0 border-l border-l-[#621924]'>
                                 <Link to={'/play/futebol'} className='flex gap-2 items-center flex-shrink-0'>
-                                    <SoccerBall size={20} /> Futebol
+                                    <span>⚽</span> Futebol
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0'>
                                 <Link to={'/play/basquete'} className='flex gap-2 items-center flex-shrink-0'>
-                                    <Basketball size={20} /> Basquete
+                                    <span>🏀</span> Basquete
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0'>
                                 <Link to={'/play/volei'} className='flex gap-2 items-center flex-shrink-0'>
-                                    <TennisBall size={20} /> Volei
+                                    <span>🏐</span> Volei
                                 </Link>
                             </li>
                             <li className='py-2 px-4 flex gap-2 items-center flex-shrink-0 border-l border-l-[#621924]'>

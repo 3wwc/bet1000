@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Lock, SoccerBall } from "@phosphor-icons/react";
+import { Lock } from "@phosphor-icons/react";
 import { useGame } from '../../context/GameContext';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -83,38 +83,46 @@ export default function GamesByChampionship() {
     return (
         <div className="js-game-championship">
             {campeonatos.map(campeonato => (
-                <div key={campeonato.idCampeonato}>
-                    <div className="py-2 px-4 bg-zinc-800 text-white mb-1 rounded flex items-center gap-2">                           
-                        <SoccerBall size={20} />
+                <div key={campeonato.idCampeonato} className='mb-2'>
+                    <div className="py-2 px-4 bg-zinc-800 text-white rounded flex items-center gap-2">                           
+                        <span>⚽</span>
                         <h3>{campeonato.campeonato}</h3>
                     </div>
                     {partidas[campeonato.idCampeonato] && partidas[campeonato.idCampeonato].map(partida => (
-                        <div className="py-3 px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 rounded" key={partida.idPartida}>
+                        <div className="pl-4 lg:px-4 flex justify-between gap-4 items-center bg-zinc-50 hover:bg-zinc-100 border-x border-b" key={partida.idPartida}>
 
-                            <div className="flex gap-4 items-center cursor-pointer js-game-name" onClick={() => handleGameClick(partida.idPartida)}>
+                            <div className="flex gap-4 items-center cursor-pointer js-game-name py-3" onClick={() => handleGameClick(partida.idPartida)}>
                                 <div className="text-center">
                                     <div>{formatarDataHora(partida.dataPartida)}</div>
                                 </div>
                                 <div className="games">
-                                    <p className="truncate flex gap-2">
-                                        <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
-                                        {partida.time1}
+                                    <p className="truncate text-xs items-center flex gap-2">
+                                        <img 
+                                            src={partida.escudo1 ? `https://cryptoscore.app/times/img_${partida.idTime1}.png` : 'https://cryptoscore.app/times/sem_escudo.png'}
+                                            className='w-6' 
+                                            alt={`Escudo ${partida.time1}`} 
+                                        />
+                                        <span className='-mb-1'>{partida.time1}</span>
                                     </p>
-                                    <p className="truncate flex gap-2">
-                                        <img src="https://cryptoscore.app/times/sem_escudo.png" className='w-6' alt={`Escudo ${partida.time1}`} />
-                                        {partida.time2}
+                                    <p className="truncate text-xs items-center flex gap-2">
+                                        <img 
+                                            src={partida.escudo2 ? `https://cryptoscore.app/times/img_${partida.idTime2}.png` : 'https://cryptoscore.app/times/sem_escudo.png'}
+                                            className='w-6' 
+                                            alt={`Escudo ${partida.time2}`} 
+                                        />
+                                        <span className='-mb-1'>{partida.time2}</span>
                                     </p>
                                 </div>
                             </div>
 
-                            <div className="flex gap-4 w-full max-w-[172px] md:max-w-[224px]">
+                            <div className="flex w-full max-w-[172px] md:max-w-[224px] md:border-r">
                                 {['casa', 'empate', 'visitante'].map(tipo => {
                                     const dadosOdd = partida.odds[tipo] || {};
                                     return (
                                         <button
                                             key={tipo}
                                             onClick={() => dadosOdd.cotacao && toggleGameSelection(campeonato.campeonato, partida.idPartida, tipo, dadosOdd.cotacao, partida.time1, partida.time2)}
-                                            className={`w-12 md:w-16 h-12 md:h-14 rounded ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'bg-zinc-300 hover:bg-zinc-400 text-primary'}`}
+                                            className={`w-full h-[72px] border-l ${isOddSelected(partida.idPartida, tipo) ? 'bg-green-600 text-white' : 'hover:bg-zinc-300 text-primary'}`}
                                             disabled={!dadosOdd.cotacao}
                                         >
                                             <span className='text-[9px]'>{tipo}</span>

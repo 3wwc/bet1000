@@ -38,7 +38,11 @@ export default function HeaderBet() {
             <div className="md:w-5/6 mx-auto">
                 <div className="flex justify-center items-center gap-5">
                     <div className="flex flex-col items-center text-center">
-                        <img src="https://cryptoscore.app/times/sem_escudo.png" alt={`Escudo ${partida.time1}`} />
+                        <img
+                            src={partida.escudo1 ? `https://cryptoscore.app/times/img_${partida.idTime1}.png` : 'https://cryptoscore.app/times/sem_escudo.png'}
+                            className='w-20'
+                            alt={`Escudo ${partida.time1}`}
+                        />
                         <p>{partida.time1}</p>
                     </div>
                     <div className="flex flex-col items-center">
@@ -48,7 +52,11 @@ export default function HeaderBet() {
                         <p className="text-xs font-bold">Horário da Partida</p>
                     </div>
                     <div className="flex flex-col items-center text-center">
-                        <img src="https://cryptoscore.app/times/sem_escudo.png" alt={`Escudo ${partida.time2}`} />
+                        <img
+                            src={partida.escudo2 ? `https://cryptoscore.app/times/img_${partida.idTime2}.png` : 'https://cryptoscore.app/times/sem_escudo.png'}
+                            className='w-20'
+                            alt={`Escudo ${partida.time2}`}
+                        />
                         {partida.time2}
                     </div>
                 </div>

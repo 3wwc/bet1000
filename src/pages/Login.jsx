@@ -44,7 +44,7 @@ export default function Login() {
                 window.location.reload();
                 navigate('/');
             } else {
-                throw new Error('Token não recebido');
+                throw new Error('E-mail ou senha inválidos');
             }
         } catch (error) {
             setError(error.message);
